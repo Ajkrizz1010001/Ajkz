@@ -1,0 +1,107 @@
+<html lang="en">
+
+<head>
+     
+    <script>
+
+        function validate()
+        {
+            var number = document.getElementById("number").value;
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+
+            var namecheck = /^[A-Za-z. ]{3,30}$/;
+            var emailcheck = /^[A-Za-z_.0-9]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z]{3}$/;
+            var mobilecheck = /^[789]{1}[0-9]{9}$/;
+           
+       
+            if (!name.match(namecheck))
+            {
+                alert("The name is not valid");
+                document.personalinfo.name.focus();
+                return false;
+            }
+            if (!email.match(emailcheck))
+            {
+                alert("The email address is not valid");
+                document.personalinfo.email.focus();
+                return false;
+            }
+            if (!number.match(mobilecheck))
+            {
+                alert("The phone number is not valid!");
+                document.personalinfo.number.focus();
+                return false;
+            }
+           
+       
+        }
+    </script>
+</head>
+<style>
+    .table{
+        background-color: #F2F3F4;
+        border-radius:7px;
+        margin-top: 15%;
+        margin-left:37%;
+        margin-right:45%;
+        margin-bottom:25%;
+        width:500px;
+        height:400px;
+    }
+    tr{
+        margin-top:10px;
+        height:10px;
+    }
+    .tab{
+        padding: 25px 15px;
+        width:470px;
+        height: 400px;
+    }
+    th{
+     float:left;
+     padding:10px;
+     margin-left:10px;
+     margin-left:10px;
+    }
+    td{
+        margin-left: 10px;
+    }
+    #btn{
+        background:rgb(112, 184, 172) ;
+        color:white;
+        font-size:17px;
+                       }
+    input,select{
+        width:100%;
+        height:30px;
+        margin-left:10px;
+        border-radius:5px;
+        margin-top: 6px;
+width: 100%;
+height: 35px;
+padding: 5px;
+border: 1px solid #CACFD2;
+border-radius: 5px;
+    }
+</style>
+<body>
+    <div class="table" style="border:1px solid black;">
+        <form action="#" onsubmit="return validate()" name="personalinfo">
+            <table class="tab">
+                <tr><th>First Name</th></tr>
+                   <tr><td><input type="text" name="name" id="name"></td>
+                </tr>
+                <tr><th>contact number</th></tr>
+                    <tr><td><input type="text" name="number" id="number" ></td>
+                </tr>
+                <tr><th>email id</th></tr>
+                <tr><td><input type="text" name="email" id="email"></td>
+            </tr>
+
+           <tr><td> <input type="reset" id="btn" value="Reset"></td></tr>
+            <tr><td><input type="submit" id="btn" value="Submit"></td></tr>
+        </form>
+    </div>
+</body>
+</html>
